@@ -34,13 +34,14 @@ class Informe extends Model
     public $fillable = [
         'casos_total',
         'activo',
-        'recuperado_por_dia',
+        'reporte_por_mes',
         'fallecido',
         'casos_por_barrio',
         'edad_promedio',
         'genero',
         'lugar_mas_afectado',
         'fecha_actualizacion'
+
     ];
 
     /**

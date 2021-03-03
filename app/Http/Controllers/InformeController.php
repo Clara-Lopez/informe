@@ -58,7 +58,7 @@ class InformeController extends AppBaseController
 
         $informe = $this->informeRepository->create($input);
 
-        Flash::success('Informe saved successfully.');
+        Flash::success('Informe guardado correctamente.');
 
         return redirect(route('informes.index'));
     }
@@ -75,7 +75,7 @@ class InformeController extends AppBaseController
         $informe = $this->informeRepository->find($id);
 
         if (empty($informe)) {
-            Flash::error('Informe not found');
+            Flash::error('Informe no encontrado.');
 
             return redirect(route('informes.index'));
         }
@@ -95,7 +95,7 @@ class InformeController extends AppBaseController
         $informe = $this->informeRepository->find($id);
 
         if (empty($informe)) {
-            Flash::error('Informe not found');
+            Flash::error('Informe no encontrado.');
 
             return redirect(route('informes.index'));
         }
@@ -116,14 +116,14 @@ class InformeController extends AppBaseController
         $informe = $this->informeRepository->find($id);
 
         if (empty($informe)) {
-            Flash::error('Informe not found');
+            Flash::error('Informe no encontrado');
 
             return redirect(route('informes.index'));
         }
 
         $informe = $this->informeRepository->update($request->all(), $id);
 
-        Flash::success('Informe updated successfully.');
+        Flash::success('Informe actualizado correctamente.');
 
         return redirect(route('informes.index'));
     }
@@ -142,14 +142,14 @@ class InformeController extends AppBaseController
         $informe = $this->informeRepository->find($id);
 
         if (empty($informe)) {
-            Flash::error('Informe not found');
+            Flash::error('Informe no encontrado.');
 
             return redirect(route('informes.index'));
         }
 
         $this->informeRepository->delete($id);
 
-        Flash::success('Informe deleted successfully.');
+        Flash::success('Informe eliminado correctamente.');
 
         return redirect(route('informes.index'));
     }

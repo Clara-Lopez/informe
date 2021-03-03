@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\facades\Mail;
 use App\Mail\InformeEjecutivo;
 
-class InformeEjecutivo extends Mailable
+class InformeEjecutivo extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 

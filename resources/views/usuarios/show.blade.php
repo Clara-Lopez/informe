@@ -3,19 +3,15 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Informe
+            Usuario
         </h1>
     </section>
     <div class="content">
-        @include('adminlte-templates::common.errors')
         <div class="box box-primary">
             <div class="box-body">
-                <div class="row">
-                    {!! Form::open(['route' => 'usuarios.store']) !!}
-
-                        @include('usuarios.fields')
-
-                    {!! Form::close() !!}
+                <div class="row" style="padding-left: 20px">
+                    @include('usuarios.show_fields')
+                    <a href="{{ route('usuarios.index') }}" class="btn btn-default">Salir</a>
                 </div>
             </div>
         </div>

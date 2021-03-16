@@ -34,7 +34,7 @@ class Informe extends Model
     public $fillable = [
         'casos_total',
         'activo',
-        'reporte_por_mes',
+        'recuperado_por_dia',
         'fallecido',
         'casos_por_barrio',
         'edad_promedio',

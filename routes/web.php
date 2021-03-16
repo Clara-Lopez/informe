@@ -24,3 +24,4 @@ Route::get('/home', 'HomeController@index')->middleware('verified');
 
 Route::resource('informes', 'InformeController');
 Route::resource('usuarios', 'UsuarioController');
+Route::get('home', 'InformeController@index');

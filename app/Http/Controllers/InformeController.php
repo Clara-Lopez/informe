@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Informe;
 
 class InformeController extends AppBaseController
 {
@@ -33,6 +34,12 @@ class InformeController extends AppBaseController
 
         return view('informes.index')
             ->with('informes', $informes);
+    }
+     public function inicio(Request $request)
+    {
+        $informes = Informe::all();
+ 
+       return view('home',compact('informes'));
     }
 
     /**

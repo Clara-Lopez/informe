@@ -5,86 +5,18 @@
 <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>  
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<br></br>
-<br>
-@include('layouts.menup')
-@yield('content')
+@extends('layouts.app')
+@section('content')
 <div class="container">
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h2 class="display-4"> <center><i class="fa fa-chart-pie"></i> Historial de graficos </center></h2>
-    <p class="lead"><center>Aqui se observan los datos mas recientes en formato grafico.</center></p>
+    <h2 class="display-4"> <center><i class="fa fa-chart-pie"></i> Informe graficos </center></h2>
+    <p class="lead"><center>Informe en formato grafico.</center></p>
   </div>
 </div>
 </div>
 
-<div class="container">
-
- 
-   <!-- Card content -->
-   <div class="card-body">
-    <div class="card">
-    <!-- Title -->
-         
-          <div id="container"></div>
-            
-                <script type="text/javascript">
-                        // Build the chart
-Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Generos mas afectados'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: false
-            },
-            showInLegend: true
-        }
-    },
-    series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'FEMENINO',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'MASCULINO',
-            y: 11.84
-        }, {
-            name: 'AMBOS',
-            y: 10.85
-        }, {
-            name: 'OTRO',
-            y: 4.67
-        
-        }]
-    }]
-});         
-      </script>
-    </div>
-    </div>
-</div>
-
-      
+<div class="container">      
     <!-- Title -->
          <div class="container">
             <div class="card-body">
@@ -162,7 +94,7 @@ Highcharts.chart('container', {
 
           </script></div>
           </div>
-          
+          <br>
     <!-- Title -->
          <div class="container">
             <div class="card-body">
@@ -233,52 +165,8 @@ $('#polar').click(function () {
     });
 });
             </script>
-            <div class="table-responsive">
-    <table class="table" id="tablas-table">
-        <thead>
-            <tr>
-                <th>Femenino</th>
-                <th>Masculino</th>
-                <th>Ambos</th>
-                <th>Otro</th>
-                <br>
-                <th>Encarnacion</th>
-                <th>Cambyreta</th>
-                <th>Coronel Bogado</th>
-                <th>Capitan Mirando</th>
-                <th>Positivo</th>
-                <th>Negativo</th>
-                <th>Recuperado</th>
-                <th>Fallecido</th>
-                <th>Inconcluso</th>
-            </tr>
-        </thead>
-        <tbody>
-        @foreach($table as $tabla)
-            <tr>
-                <td>{{ $tabla->femenino }}</td>
-                <td>{{ $tabla->masculino }}</td>
-                <td>{{ $tabla->ambos }}</td>
-                <td>{{ $tabla->otro }}</td><br>
-                <td>{{ $tabla->encarnacion }}</td>
-                <td>{{ $tabla->cambyreta }}</td>
-                <td>{{ $tabla->coronel_bogado }}</td>
-                <td>{{ $tabla->capitan_mirando }}</td>
-                <td>{{ $tabla->positivo }}</td>
-                <td>{{ $tabla->negativo }}</td>
-                <td>{{ $tabla->recuperado }}</td>
-                <td>{{ $tabla->fallecido }}</td>
-                <td>{{ $tabla->inconcluso }}</td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
-</div>
-              
-          </div>
+           
       </br>
+  </div>
 
-
-
-@include('layouts.footerp')
-@yield('content')    
+@endsection  

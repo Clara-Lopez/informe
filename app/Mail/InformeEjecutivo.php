@@ -7,22 +7,22 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-use Illuminate\Support\facades\Mail;
-use App\Mail\InformeEjecutivo;
-
-class InformeEjecutivo extends Mailable implements ShouldQueue
+class InformeEjecutivo extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $pdf;
+    public $mapas;
+    public $graficos;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Pdf $pdf, Mapas $mapas, Graficos $graficos, )
     {
-        Mail::to('clara.lopez96@unae.edu.py')
-        ->send(new InformeEjecutivo());
+        //
     }
 
     /**
@@ -32,6 +32,6 @@ class InformeEjecutivo extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('mails.InformeEjecutivo');
     }
 }
